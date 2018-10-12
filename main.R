@@ -13,7 +13,7 @@ library(dplyr)
 # Fare
 
 #read file
-titanic_in<-read_csv("in/files/titanic.csv",stringsAsFactors = FALSE)
+titanic_in<-read.csv("titanic.csv",stringsAsFactors = FALSE)
 
 #compute mean of ages and fares of all passengers and store it in data frame
 mean_all<-data.frame(titanic_in%>%summarise(mean_age=mean(Age),mean_fare=mean(Fare)))
