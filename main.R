@@ -12,7 +12,7 @@ library(dplyr)
 # Parents.Children.Aboard
 # Fare
 
-#read table
+#read file
 titanic_in<-read.csv("in/files/titanic.csv",stringsAsFactors = FALSE)
 
 #compute mean of ages and fares of all passengers and store it in data frame
@@ -25,6 +25,6 @@ data_selected_male<-subset(titanic_in,Sex=='male'& Survived==1)
 mean_male_survived<-data.frame(data_selected_male%>%summarise(mean_age=mean(Age),mean_fare=mean(Fare)))
 
 # write output means to tables
-write.csv(mean_all, file = "out/tables/mean_all.csv", row.names = FALSE)
-write.csv(mean_male_survived, file = "out/tables/mean_male_survived.csv", row.names = FALSE)
+write.csv(mean_all, file = "out/files/mean_all.csv", row.names = FALSE)
+write.csv(mean_male_survived, file = "out/files/mean_male_survived.csv", row.names = FALSE)
 
