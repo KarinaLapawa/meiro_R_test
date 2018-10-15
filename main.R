@@ -1,6 +1,6 @@
 library(dplyr)
 #for computing mean and piping operator usage
-
+print(bla)
 # titanic:
 # Survived
 # Pclass
