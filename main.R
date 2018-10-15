@@ -1,9 +1,29 @@
-#import necessary libraries
-library(data.table)
+library(dplyr)
+#for computing mean and piping operator usage
 
-#request url and save response to variable titanic
-titanic<-fread("http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/stuff/titanic.csv")
+# titanic:
+# Survived
+# Pclass
+# Name
+# Sex
+# Age
+# Siblongs.Spouses.Aboad
+# Parents.Children.Aboard
+# Fare
 
-# write output to table and print first 10 rows
-write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
-print(titanic[1:10,"Survived"])
+#read table
+titanic_in<-read.csv("/data/in/tables/titanic.csv",stringsAsFactors = FALSE)
+
+#compute mean of ages and fares of all passengers and store it in data frame
+mean_all<-data.frame(titanic_in%>%summarise(mean_age=mean(Age),mean_fare=mean(Fare)))
+
+#filter table for only male passengers who survived
+data_selected_male<-subset(titanic_in,Sex=='male'& Survived==1)
+
+#compute mean of ages and fares of those male and survived and store it in data frame
+mean_male_survived<-data.frame(data_selected_male%>%summarise(mean_age=mean(Age),mean_fare=mean(Fare)))
+
+# write output means to tables
+write.csv(mean_all, file = "/data/out/tables/mean_all.csv", row.names = FALSE)
+write.csv(mean_male_survived, file = "/data/out/tables/mean_male_survived.csv", row.names = FALSE)
+
