@@ -1,6 +1,6 @@
 library(dplyr)
 #for computing mean and piping operator usage
-print(bla)
+
 # titanic:
 # Survived
 # Pclass
@@ -27,3 +27,4 @@ mean_male_survived<-data.frame(data_selected_male%>%summarise(mean_age=mean(Age)
 write.csv(mean_all, file = "/data/out/tables/mean_all.csv", row.names = FALSE)
 write.csv(mean_male_survived, file = "/data/out/tables/mean_male_survived.csv", row.names = FALSE)
 
+print(bla)
