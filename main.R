@@ -1,19 +1,13 @@
-install.packages("RJSONIO")
-library(RJSONIO)
-file<-RJSONIO::fromJSON("/data/config.json")
-file[[‘parameters’]][[‘url’]]
-
-raw_data <- getURL("url")
-data <- fromJSON(raw_data)
-
-final data <- do.call(rbind, data)
 
 
 #import necessary libraries
 library(data.table)
 
 #request url and save response to variable titanic
-titanic<-fread("url")
+install.packages("RJSONIO")
+library(RJSONIO)
+file<-RJSONIO::fromJSON("/data/config.json")
+file[[‘parameters’]][[‘url’]]
 
 # write output to table and print first 10 rows
 write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
