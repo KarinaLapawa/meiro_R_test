@@ -1,4 +1,4 @@
 install.packages("RJSONIO")
 library(RJSONIO) 
-vjs <- RJSONIO::fromJSON("/data/config.json")
-vjs[['parameters']][['bla']]
+file <- RJSONIO::fromJSON("/data/config.json")
+file [['parameters']][['bla']]
