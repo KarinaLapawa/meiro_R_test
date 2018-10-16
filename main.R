@@ -11,7 +11,7 @@ file[['parameters']][['url']]
 library(data.table)
 
 #request url and save response to variable titanic
-titanic<-download.file[['parameters']][['url']]
+titanic<-download.file[file]
 
 
 # write output to table and print first 10 rows
