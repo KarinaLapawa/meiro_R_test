@@ -11,10 +11,8 @@ file[['parameters']][['url']]
 library(data.table)
 
 #request url and save response to variable titanic
-titanic<-download.file[file]
-
-
-# write output to table and print first 10 rows
-write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
+titanic<-download.file([['parameters']][['url']], destfile = "/data/out/tables/titanic.csv", row.names = FALSE)
 print(titanic[1:10,"Survived"])
+
+
 
