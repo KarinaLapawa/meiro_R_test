@@ -3,6 +3,11 @@ library(RJSONIO)
 file<-RJSONIO::fromJSON("/data/config.json")
 file[[‘parameters’]][[‘url’]]
 
+raw_data <- getURL("url")
+data <- fromJSON(raw_data)
+
+final data <- do.call(rbind, data)
+
 
 #import necessary libraries
 library(data.table)
@@ -11,5 +16,5 @@ library(data.table)
 titanic<-fread("url")
 
 # write output to table and print first 10 rows
-write.csv(titanic, files = "/data/out/tables/titanic.csv", row.names = FALSE)
+write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
 print(titanic[1:10,"Survived"])
