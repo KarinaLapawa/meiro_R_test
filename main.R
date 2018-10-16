@@ -12,7 +12,7 @@ file[['parameters']][['url']]
 library(data.table)
 
 #request url and save response to variable titanic
-titanic<-fread('url')
+titanic<-fread("url")
 
 # write output to table and print first 10 rows
 write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
