@@ -11,7 +11,7 @@ file[['parameters']][['url']]
 library(data.table)
 
 #request url and save response to variable titanic
-titanic<-download.file([file, destfile = "/data/out/tables/titanic.csv", row.names = FALSE)
+titanic<-download.file(file, destfile = "/data/out/tables/titanic.csv", row.names = FALSE)
 print(titanic[1:10,"Survived"])
 
 
