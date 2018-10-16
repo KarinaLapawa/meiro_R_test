@@ -7,10 +7,11 @@ library(RJSONIO)
 file<-RJSONIO::fromJSON("/data/config.json")
 file[['parameters']][['url']]
 
-
 #import necessary libraries
 library(data.table)
 
+#request url and save response to variable titanic
+titanic<-download.file[['parameters']][['url']]
 
 
 # write output to table and print first 10 rows
