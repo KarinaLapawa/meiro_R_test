@@ -11,5 +11,5 @@ library(data.table)
 titanic<-fread("url")
 
 # write output to table and print first 10 rows
-write.csv(titanic, file = "/data/out/tables/titanic.csv", row.names = FALSE)
+write.csv(titanic, files = "/data/out/tables/titanic.csv", row.names = FALSE)
 print(titanic[1:10,"Survived"])
