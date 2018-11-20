@@ -2,7 +2,7 @@
 import pandas as pd
 
 #read data from file and keep it in data variable
-data = pd.read_csv('/data/in/tables/titanic/titanic.csv')
+data = pd.read_csv('/data/in/tables/titanic.csv')
 
 #filter rows with male and female passengers, keep data in variables
 data_male = data[data['Sex']=='male']
